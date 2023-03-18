@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1025976561987",
+    "project_id": "fir-email-auth-441ef",
+    "storage_bucket": "fir-email-auth-441ef.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1025976561987:android:e48b61174c801774c07ff6",
+        "android_client_info": {
+          "package_name": "com.winterry.fb_firebase_email_auth"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1025976561987-kijcmadk91ht2bkf1ikomar3gthr16n5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDltY3jupQw3xcqSZs8e0TuwoxcbXd6hl8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1025976561987-kijcmadk91ht2bkf1ikomar3gthr16n5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

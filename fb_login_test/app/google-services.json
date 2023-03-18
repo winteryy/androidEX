@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "251825802209",
+    "project_id": "fb-login-test-2cd94",
+    "storage_bucket": "fb-login-test-2cd94.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:251825802209:android:cfc1de20f8a6a3f4a8a0a0",
+        "android_client_info": {
+          "package_name": "com.winterry.fb_login_test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "251825802209-cst57l8j0ifamv5lt7tl6n43tj8f2qsd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCI2MTXX3l2wV9AcIFuirUv-a3t5JFO7BI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "251825802209-cst57l8j0ifamv5lt7tl6n43tj8f2qsd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
