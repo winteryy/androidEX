@@ -9,5 +9,9 @@ class FBRef {
         val database = Firebase.database
 
         val bookmarkRef = database.getReference("bookmark_list")
+
+        val category1 = database.getReference("contents")
+        val category2 = database.getReference("contents2")
+
     }
 }

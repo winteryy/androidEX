@@ -17,9 +17,9 @@ import com.winterry.mysolelife.R
 import com.winterry.mysolelife.utils.FBAuth
 import com.winterry.mysolelife.utils.FBRef
 
-class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
+class BookmarkRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
                        val keyList: ArrayList<String>,
-                       val bookmarkIdList: MutableList<String>) : RecyclerView.Adapter<ContentRVAdapter.ViewHolder>() {
+                       val bookmarkIdList: MutableList<String>) : RecyclerView.Adapter<BookmarkRVAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView : View) : RecyclerView.ViewHolder(itemView) {
 
@@ -41,23 +41,6 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
                 intent.putExtra("url", item.webUrl)
                 itemView.context.startActivity(intent)
             }
-            bookmarkArea.setOnClickListener {
-                Log.d("ContentRVAdapter", FBAuth.getUid())
-                Toast.makeText(context, key, Toast.LENGTH_SHORT).show()
-
-
-                if(bookmarkIdList.contains(key)){                //marked
-                    FBRef.bookmarkRef
-                        .child(FBAuth.getUid())
-                        .child(key)
-                        .removeValue()
-                }else{              //non-marked
-                    FBRef.bookmarkRef
-                        .child(FBAuth.getUid())
-                        .child(key)
-                        .setValue(BookmarkModel(true))
-                }
-            }
 
             Glide.with(context)
                 .load(item.imageUrl)
@@ -66,7 +49,7 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): BookmarkRVAdapter.ViewHolder {
         val v = LayoutInflater.from(parent.context).inflate(R.layout.content_rv_item, parent, false)
 
         Log.d("ContentRVAdapter", keyList.toString())
@@ -75,7 +58,7 @@ class ContentRVAdapter(val context: Context, val items: ArrayList<ContentModel>,
         return ViewHolder(v)
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: BookmarkRVAdapter.ViewHolder, position: Int) {
 
         holder.bindItems(items[position], keyList[position])
     }
