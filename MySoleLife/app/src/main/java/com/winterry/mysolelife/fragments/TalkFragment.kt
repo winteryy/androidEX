@@ -26,6 +26,7 @@ class TalkFragment : Fragment() {
     private lateinit var binding: FragmentTalkBinding
 
     private val boardDataList = mutableListOf<BoardModel>()
+    private val boardKeyList = mutableListOf<String>()
 
     private val TAG = TalkFragment::class.java.simpleName
 
@@ -48,13 +49,17 @@ class TalkFragment : Fragment() {
         binding.boardListView.adapter = boardLVAdapter
 
         binding.boardListView.setOnItemClickListener { parent, view, position, id ->
-        //intent를 통해 액티비티에 직접 데이터 전달
-            val intent = Intent(context, BoardInsideActivity::class.java)
-            intent.putExtra("title", boardDataList[position].title)
-            intent.putExtra("content", boardDataList[position].content)
-            intent.putExtra("time", boardDataList[position].time)
-            startActivity(intent)
+            //intent를 통해 액티비티에 직접 모두 데이터 전달
+//            val intent = Intent(context, BoardInsideActivity::class.java)
+//            intent.putExtra("title", boardDataList[position].title)
+//            intent.putExtra("content", boardDataList[position].content)
+//            intent.putExtra("time", boardDataList[position].time)
+//            startActivity(intent)
 
+            //데이터 id기반으로 다시 데이터 받도록
+            val intent = Intent(context, BoardInsideActivity::class.java)
+            intent.putExtra("key", boardKeyList[position])
+            startActivity(intent)
         }
 
         binding.writeBtn.setOnClickListener {
@@ -88,10 +93,11 @@ class TalkFragment : Fragment() {
 
                     val item = dataModel.getValue(BoardModel::class.java)
                     boardDataList.add(item!!)
+                    boardKeyList.add(dataModel.key.toString())
                 }
 
                 boardDataList.reverse()
-
+                boardKeyList.reverse()
                 boardLVAdapter.notifyDataSetChanged()
                 Log.d(TAG, boardDataList.toString())
             }
