@@ -3,6 +3,7 @@ package com.winterry.mysolelife.board
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
+import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnCompleteListener
@@ -13,6 +14,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.winterry.mysolelife.R
 import com.winterry.mysolelife.databinding.ActivityBoardEditBinding
+import com.winterry.mysolelife.utils.FBAuth
 import com.winterry.mysolelife.utils.FBRef
 
 class BoardEditActivity : AppCompatActivity() {
@@ -21,6 +23,7 @@ class BoardEditActivity : AppCompatActivity() {
 
     private lateinit var  binding : ActivityBoardEditBinding
     private lateinit var key : String
+    private lateinit var writerUid : String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,6 +33,24 @@ class BoardEditActivity : AppCompatActivity() {
         key = intent.getStringExtra("key").toString()
         getBoardData(key)
         getImageData(key)
+
+        binding.editBtn.setOnClickListener {
+            editBoardData(key)
+        }
+
+    }
+
+    private fun editBoardData(key: String){
+
+        FBRef.boardRef
+            .child(key)
+            .setValue(BoardModel(binding.titleArea.text.toString(),
+                binding.contentArea.text.toString(),
+                writerUid,
+                FBAuth.getTime() ) )
+
+        Toast.makeText(this, "수정완료", Toast.LENGTH_SHORT).show()
+        finish()
     }
 
     private fun getImageData(key: String){
@@ -56,6 +77,7 @@ class BoardEditActivity : AppCompatActivity() {
                     val dataModel = dataSnapshot.getValue(BoardModel::class.java)
                     binding.titleArea.setText(dataModel?.title)
                     binding.contentArea.setText(dataModel?.content)
+                    writerUid = dataModel!!.uid
                 }catch (e: Exception){
                     Log.d(TAG, "삭제완료")
                 }

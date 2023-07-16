@@ -69,13 +69,13 @@
                     android:tag="default"/>
 
                 <Button
-                    android:id="@+id/writeBtn"
+                    android:id="@+id/editBtn"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="50dp"
                     android:layout_marginHorizontal="20dp"
                     android:background="@drawable/background_radius_yellow"
-                    android:text="입력" />
+                    android:text="수정" />
             </LinearLayout>
 
         </ScrollView>

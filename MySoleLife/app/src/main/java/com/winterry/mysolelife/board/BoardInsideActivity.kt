@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.widget.Button
 import android.widget.Toast
 import androidx.appcompat.app.AlertDialog
+import androidx.core.view.isVisible
 import androidx.databinding.DataBindingUtil
 import com.bumptech.glide.Glide
 import com.google.android.gms.tasks.OnCompleteListener
@@ -18,6 +19,7 @@ import com.google.firebase.ktx.Firebase
 import com.google.firebase.storage.ktx.storage
 import com.winterry.mysolelife.R
 import com.winterry.mysolelife.databinding.ActivityBoardInsideBinding
+import com.winterry.mysolelife.utils.FBAuth
 import com.winterry.mysolelife.utils.FBRef
 
 class BoardInsideActivity : AppCompatActivity() {
@@ -47,8 +49,8 @@ class BoardInsideActivity : AppCompatActivity() {
 
         //key만 전달받기
         key = intent.getStringExtra("key").toString()
-        getBoardData(key.toString())
-        getImageData(key.toString())
+        getBoardData(key)
+        getImageData(key)
     }
 
     private fun showDialog(){
@@ -107,6 +109,16 @@ class BoardInsideActivity : AppCompatActivity() {
                     binding.titleArea.text = dataModel!!.title //실제 구현 시에는 null체크 따로 할 것
                     binding.contentArea.text = dataModel!!.content
                     binding.timeArea.text = dataModel!!.time
+
+                    val myUid = FBAuth.getUid()
+                    val writerUid = dataModel.uid
+
+                    if(myUid.equals(writerUid)){
+                        binding.boardSettingIcon.isVisible = true
+                    }else{
+
+                    }
+
                 }catch (e: Exception){
                     Log.d(TAG, "삭제완료")
                 }
