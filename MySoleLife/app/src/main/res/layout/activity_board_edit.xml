@@ -7,9 +7,7 @@
         xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".board.BoardWriteActivity"
-        android:orientation="vertical">
-
+        tools:context=".board.BoardEditActivity">
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -24,7 +22,7 @@
                     <TextView
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
-                        android:text="글쓰기 페이지"
+                        android:text="수정 페이지"
                         android:textColor="@color/black"
                         android:gravity="center" />
                 </LinearLayout>
