@@ -4,7 +4,9 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.example.jetpackex.dataBinding.DbindingActivity
 import com.example.jetpackex.databinding.ActivityMainBinding
+import com.example.jetpackex.viewBinding.VbindingActivity
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +26,21 @@ class MainActivity : AppCompatActivity() {
         binding.btn1.text = "abcd"
         binding.btn1.setOnClickListener {
             val intent = Intent(this, SecondActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btn2.setOnClickListener {
+            val intent = Intent(this, DatabindingActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btn3.setOnClickListener {
+            val intent = Intent(this, VbindingActivity::class.java)
+            startActivity(intent)
+        }
+
+        binding.btn4.setOnClickListener {
+            val intent = Intent(this, DbindingActivity::class.java)
             startActivity(intent)
         }
 

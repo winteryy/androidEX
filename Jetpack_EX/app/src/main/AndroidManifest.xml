@@ -13,6 +13,21 @@
         android:theme="@style/Theme.JetpackEx"
         tools:targetApi="31">
         <activity
+            android:name=".dataBinding.DbindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".viewBinding.VbindingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FourthActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ThirdActivity"
+            android:exported="false" />
+        <activity
+            android:name=".DatabindingActivity"
+            android:exported="false" />
+        <activity
             android:name=".SecondActivity"
             android:exported="false" />
         <activity
