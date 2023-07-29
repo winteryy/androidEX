@@ -29,6 +29,16 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
+        findViewById<Button>(R.id.liveBtnArea).setOnClickListener {
+            val intent = Intent(this, LiveTransActivity::class.java)
+            startActivity(intent)
+        }
+
+        findViewById<Button>(R.id.integratedBtn).setOnClickListener {
+            val intent = Intent(this, IntegratedActivity::class.java)
+            startActivity(intent)
+        }
+
         viewModel.testLiveData.observe(this, Observer {
             findViewById<TextView>(R.id.textArea).text = it.toString()
         })

@@ -30,6 +30,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="fragLiveData"/>
+
+        <Button
+            android:id="@+id/liveBtnArea"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="livedata transformation"/>
+
+        <Button
+            android:id="@+id/integratedBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Integrated Activity"/>
         
     </LinearLayout>
 

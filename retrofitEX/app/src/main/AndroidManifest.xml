@@ -2,6 +2,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -10,17 +12,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.JetpackLiveData"
+        android:theme="@style/Theme.RetrofitEX"
         tools:targetApi="31">
-        <activity
-            android:name=".IntegratedActivity"
-            android:exported="false" />
-        <activity
-            android:name=".LiveTransActivity"
-            android:exported="false" />
-        <activity
-            android:name=".FragMainActivity"
-            android:exported="false" />
         <activity
             android:name=".MainActivity"
             android:exported="true">
