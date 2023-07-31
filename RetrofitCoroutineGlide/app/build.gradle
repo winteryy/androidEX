@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.example.retrofitex'
+    namespace 'com.example.retrofitcoroutineglide'
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.retrofitex"
+        applicationId "com.example.retrofitcoroutineglide"
         minSdk 24
         targetSdk 33
         versionCode 1
@@ -45,4 +45,6 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation 'com.squareup.retrofit2:converter-gson:2.9.0'
     implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.4.0")
+    implementation 'com.github.bumptech.glide:glide:4.15.1'
+
 }

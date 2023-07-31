@@ -1,4 +1,4 @@
-package com.example.retrofitex
+package com.example.retrofitex.model
 
 data class Post (
     val userId: Int,

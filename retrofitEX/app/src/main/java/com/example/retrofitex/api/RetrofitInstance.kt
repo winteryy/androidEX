@@ -1,4 +1,4 @@
-package com.example.retrofitex
+package com.example.retrofitex.api
 
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
